@@ -278,76 +278,225 @@ INSERT INTO RentalOrders VALUES (1, 2, 1, 3, 'GOOD', 23, 140440, 140640, 200,
 
  CREATE TABLE Employees
  (
- Id,
- FirstName,
- LastName,
- Title,
- Notes
+ Id INT NOT NULL PRIMARY KEY,
+ FirstName NVARCHAR(50) NOT NULL,
+ LastName NVARCHAR(50) NOT NULL,
+ Title NVARCHAR(50) NOT NULL,
+ Notes NVARCHAR(max)
  );
 
  CREATE TABLE Customers
  (
- AccountNumber,
- FirstName,
- LastName, 
- PhoneNumber, 
- EmergencyName, 
- EmergencyNumber, 
- Notes
+ AccountNumber NVARCHAR(50) NOT NULL PRIMARY KEY,
+ FirstName NVARCHAR(50) NOT NULL,
+ LastName NVARCHAR(50) NOT NULL, 
+ PhoneNumber NVARCHAR(15) NOT NULL, 
+ EmergencyName NVARCHAR(50) NOT NULL, 
+ EmergencyNumber NVARCHAR(15) NOT NULL, 
+ Notes NVARCHAR(max)
  );
 
  CREATE TABLE RoomStatus
  (
- RoomStatus, 
- Notes
+ RoomStatus NVARCHAR(50) NOT NULL PRIMARY KEY, 
+ Notes NVARCHAR(max)
  );
 
  CREATE TABLE RoomTypes
  (
- RoomType, 
- Notes
+ RoomType NVARCHAR(50) NOT NULL PRIMARY KEY, 
+ Notes NVARCHAR(max)
  );
 
  CREATE TABLE BedTypes
  (
- BedType, 
- Notes
+ BedType NVARCHAR(30) NOT NULL PRIMARY KEY, 
+ Notes NVARCHAR(max)
  );
 
  CREATE TABLE Rooms
  (
- RoomNumber, 
- RoomType,
- BedType, 
- Rate, 
- RoomStatus, 
- Notes
+ RoomNumber INT NOT NULL PRIMARY KEY, 
+ RoomType NVARCHAR(50) NOT NULL,
+ BedType NVARCHAR(30) NOT NULL, 
+ Rate FLOAT(2) NOT NULL, 
+ RoomStatus NVARCHAR(50) NOT NULL, 
+ Notes NVARCHAR(max)
  );
 
  CREATE TABLE Payments
  (
- Id, 
- EmployeeId, 
- PaymentDate, 
- AccountNumber, 
- FirstDateOccupied, 
- LastDateOccupied, 
- TotalDays, 
- AmountCharged, 
- TaxRate, 
- TaxAmount, 
- PaymentTotal, 
- Notes
+ Id INT NOT NULL PRIMARY KEY, 
+ EmployeeId INT NOT NULL, 
+ PaymentDate DATE NOT NULL, 
+ AccountNumber NVARCHAR(50) NOT NULL, 
+ FirstDateOccupied DATE NOT NULL, 
+ LastDateOccupied DATE NOT NULL, 
+ TotalDays INT NOT NULL, 
+ AmountCharged FLOAT (2) NOT NULL, 
+ TaxRate FLOAT (2) NOT NULL, 
+ TaxAmount FLOAT (2) NOT NULL, 
+ PaymentTotal FLOAT (2) NOT NULL, 
+ Notes NVARCHAR(max)
  );
 
  CREATE TABLE Occupancies
  (
- Id, 
- EmployeeId, 
- DateOccupied, 
- AccountNumber, 
- RoomNumber, 
- RateApplied, 
- PhoneCharge, 
- Notes
+ Id INT NOT NULL PRIMARY KEY, 
+ EmployeeId INT NOT NULL, 
+ DateOccupied DATE NOT NULL, 
+ AccountNumber NVARCHAR(50) NOT NULL, 
+ RoomNumber INT NOT NULL, 
+ RateApplied FLOAT (2) NOT NULL, 
+ PhoneCharge FLOAT (2), 
+ Notes NVARCHAR(max)
  );
+
+ INSERT INTO Employees VALUES (1, 'JOHN', 'JOHNY', 'J', NULL),
+ (2, 'ADAM', 'SMITH', 'AS', NULL),
+ (3, 'LILY', 'LUCK', 'LL', NULL);
+
+ INSERT INTO Customers VALUES ('KKDAA2332342342423432', 'IVAN', 'IVANOV', '32194994', 'II', '21', NULL),
+ ('LKLL334', 'STAMAT', 'PETROV', '+232194994', 'SP', '22', NULL),
+ ('KKDAA23323423', 'ZOYA', 'HRISTOVA', '+113222194994', 'ZH', '23', NULL);
+
+ INSERT INTO RoomStatus VALUES ('FREE', NULL),
+ ('OCCUPIED', NULL),
+ ('RESERVED', NULL);
+
+ INSERT INTO RoomTypes VALUES ('SINGLE', NULL),
+ ('DOUBLE', NULL),
+ ('SUIT', NULL);
+
+ INSERT INTO BedTypes VALUES ('SINGLE', NULL),
+ ('DOUBLE', NULL),
+ ('PREMIUM', NULL);
+
+ INSERT INTO Rooms VALUES (301, 'DOUBLE', 'PREMIUM', 50.33, 'FREE', NULL),
+ (302, 'DOUBLE', 'DOUBLE', 40.50, 'OCCUPIED', NULL),
+ (303, 'SINGLE', 'SINGLE', 30.33, 'FREE', NULL);
+
+ INSERT INTO Payments VALUES (1, 2, '2016-10-06', 'ADADASDA', '2016-10-01', '2016-10-06', 6, 300, 0.2, 60, 360, NULL),
+ (2, 1, '2016-10-06', 'ADADASDA', '2016-10-01', '2016-10-06', 6, 300, 0.2, 60, 360, NULL),
+ (3, 3, '2016-10-06', 'ADADASDA', '2016-10-01', '2016-10-06', 6, 300, 0.2, 60, 360, NULL);
+
+ INSERT INTO Occupancies VALUES (1, 1, '2016-10-06', 'ADADASDA', 205, 0.2, 0.00, NULL),
+ (2, 2, '2016-10-06', 'ADADASDA', 205, 0.2, 0.00, NULL),
+ (3, 3, '2016-10-06', 'ADADASDA', 205, 0.2, 0.00, NULL);
+
+-- PROBLEM 16
+
+CREATE DATABASE SoftUniNew;
+
+USE SoftUniNew
+GO
+
+CREATE TABLE Towns
+(
+Id INT NOT NULL PRIMARY KEY IDENTITY,
+Name NVARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Addresses
+(
+Id INT NOT NULL PRIMARY KEY IDENTITY,
+AddressText NVARCHAR(150) NOT NULL,
+TownId INT
+);
+
+CREATE TABLE Departments
+(
+Id INT NOT NULL PRIMARY KEY IDENTITY,
+Name NVARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Employees
+(
+Id INT NOT NULL PRIMARY KEY IDENTITY,
+FirstName NVARCHAR(50) NOT NULL,
+MiddleName NVARCHAR(50),
+LastName NVARCHAR(50) NOT NULL,
+JobTitle NVARCHAR(50) NOT NULL,
+DepartmentId INT NOT NULL,
+HireDate DATE NOT NULL,
+Salary DECIMAL NOT NULL,
+AddressId INT NOT NULL
+);
+
+ALTER TABLE Addresses
+ADD CONSTRAINT FK_Addresses_TownId FOREIGN KEY (TownId)
+REFERENCES Towns (Id);
+
+ALTER TABLE Employees
+ADD CONSTRAINT FK_Employees_DepartmentId FOREIGN KEY (DepartmentId)
+REFERENCES Departments (Id);
+
+ALTER TABLE Employees
+ADD CONSTRAINT FK_Employees_AddressId FOREIGN KEY (AddressId)
+REFERENCES Addresses (Id);
+
+--PROBLEM 18
+
+INSERT INTO Towns
+VALUES ('Sofia'),('Plovdiv'),('Varna'),('Burgas');
+
+INSERT INTO Departments
+VALUES ('Engineering'), ('Sales'), ('Marketing'), ('Software Development'), ('Quality Assurance');
+
+INSERT INTO Employees (FirstName, MiddleName, LastName, JobTitle,DepartmentId, HireDate, Salary)
+VALUES ('Ivan', 'Ivanov', 'Ivanov', '.NET Developer', 4, '2013-02-01', 3500.00),
+('Petar', 'Petrov', 'Petrov', 'Senior Engineer', 1, '2004-03-02', 4000.00),
+('Maria', 'Petrova', 'Ivanova', 'Intern', 5, '2016-08-28', 525.25),
+('Georgi', 'Teziev', 'Ivanov', 'CEO', 2, '2007-12-09', 3000.00),
+('Peter', 'Pan', 'Pan', 'Intern', 3, '2016-08-28', 599.88);
+
+--PROBLEM 19
+
+SELECT * FROM Towns;
+
+SELECT * FROM Departments;
+
+SELECT * FROM Employees;
+
+--PROBLEM 20
+
+SELECT * FROM Towns
+ORDER BY Name;
+
+SELECT * FROM Departments
+ORDER BY Name;
+
+SELECT * FROM Employees
+ORDER BY Salary DESC;
+
+--PROBLEM 21
+
+SELECT Name FROM Towns
+ORDER BY Name;
+
+SELECT Name FROM Departments
+ORDER BY Name;
+
+SELECT FirstName, LastName, JobTitle, Salary FROM Employees
+ORDER BY Salary DESC;
+
+--PROBLEM 22
+
+UPDATE Employees
+SET Salary = Salary + Salary * 0.1;
+
+SELECT Salary FROM Employees;
+
+--PROBLEM 23
+
+USE Hotel
+GO
+
+UPDATE Payments
+SET TaxRate = TaxRate - TaxRate * 0.03;
+
+SELECT TaxRate FROM Payments;
+
+--PROBLEM 24
+
+DELETE FROM Occupancies;
