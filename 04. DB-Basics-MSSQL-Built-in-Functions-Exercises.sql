@@ -86,12 +86,56 @@ SELECT TOP 50 Name,
 
 --PROBLEM 13
 
-SELECT U.Username, REPLACE(U.Email, '@', '') AS 'Email Provider' FROM Users AS U
+SELECT U.Username, 
+RIGHT(U.Email, LEN(U.Email) - CHARINDEX('@', U.Email)) AS 'Email Provider' 
+FROM Users AS U
+ORDER BY [Email Provider], U.Username;
 
 --PROBLEM 14
 
+SELECT U.Username, 
+U.IpAddress
+FROM Users AS U
+WHERE U.IpAddress LIKE '___.1%.%.___'
+ORDER BY U.Username;
+
 --PROBLEM 15
 
+select 
+Name [Game],
+Start = Case
+	when DATEPART(Hour, Start) >= 0 and DATEPART(Hour, Start) < 12 then 'Morning'
+	when DATEPART(Hour, Start) >= 12 and DATEPART(Hour, Start) < 18 then 'Afternoon'
+	
+	else
+		'Evening'
+	end,
+Duration =
+Case 
+	when Duration <= 3 then 'Extra Short'
+	when Duration >= 4 AND  Duration <=6 then 'Short'
+	when Duration >6 then 'Long'
+	else 
+	'Extra Long'
+	end 
+from Games
+order by [Game], Duration, Start
+
 --PROBLEM 16
+
+CREATE TABLE Orders
+(
+Id INT PRIMARY KEY IDENTITY,
+[Name] NVARCHAR(50),
+OrderDate DATE 
+)
+
+INSERT INTO Orders ([Name], OrderDate) VALUES ('BUTTER', '2016-09-19')
+
+SELECT O.[Name],
+	   O.OrderDate,
+	   DATEADD(DAY, 3, O.OrderDate) AS 'Pay Due',
+	   DATEADD(MONTH, 1, O.OrderDate) AS 'Deliver Due'
+FROM Orders AS O
 
 --PROBLEM 17
