@@ -1,0 +1,6 @@
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\02.GetVillainsNames\bin\Debug\02.GetVillainsNames.exe.config
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\02.GetVillainsNames\bin\Debug\02.GetVillainsNames.exe
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\02.GetVillainsNames\bin\Debug\02.GetVillainsNames.pdb
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\02.GetVillainsNames\obj\Debug\02.GetVillainsNames.csprojResolveAssemblyReference.cache
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\02.GetVillainsNames\obj\Debug\02.GetVillainsNames.exe
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\02.GetVillainsNames\obj\Debug\02.GetVillainsNames.pdb

@@ -1,0 +1,6 @@
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\03.GetMinionNames\bin\Debug\03.GetMinionNames.exe.config
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\03.GetMinionNames\bin\Debug\03.GetMinionNames.exe
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\03.GetMinionNames\bin\Debug\03.GetMinionNames.pdb
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\03.GetMinionNames\obj\Debug\03.GetMinionNames.csprojResolveAssemblyReference.cache
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\03.GetMinionNames\obj\Debug\03.GetMinionNames.exe
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\03.GetMinionNames\obj\Debug\03.GetMinionNames.pdb
