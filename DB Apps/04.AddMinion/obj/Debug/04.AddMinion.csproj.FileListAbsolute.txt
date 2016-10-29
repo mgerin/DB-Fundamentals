@@ -1,0 +1,6 @@
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\04.AddMinion\bin\Debug\04.AddMinion.exe.config
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\04.AddMinion\bin\Debug\04.AddMinion.exe
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\04.AddMinion\bin\Debug\04.AddMinion.pdb
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\04.AddMinion\obj\Debug\04.AddMinion.csprojResolveAssemblyReference.cache
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\04.AddMinion\obj\Debug\04.AddMinion.exe
+C:\Users\Marvik\documents\visual studio 2015\Projects\01.HwDBApps\04.AddMinion\obj\Debug\04.AddMinion.pdb
