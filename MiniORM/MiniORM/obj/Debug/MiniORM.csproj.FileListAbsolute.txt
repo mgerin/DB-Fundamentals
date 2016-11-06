@@ -1,0 +1,1 @@
+c:\users\marvik-pc\documents\visual studio 2015\Projects\MiniORM\MiniORM\bin\Debug\MiniORM.exe.config
