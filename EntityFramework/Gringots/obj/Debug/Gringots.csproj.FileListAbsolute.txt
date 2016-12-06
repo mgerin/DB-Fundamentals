@@ -1,0 +1,10 @@
+C:\Users\Marvik-PC\Documents\Visual Studio 2015\Projects\EntityFramework\Gringots\bin\Debug\Gringots.exe.config
+C:\Users\Marvik-PC\Documents\Visual Studio 2015\Projects\EntityFramework\Gringots\bin\Debug\Gringots.exe
+C:\Users\Marvik-PC\Documents\Visual Studio 2015\Projects\EntityFramework\Gringots\bin\Debug\Gringots.pdb
+C:\Users\Marvik-PC\Documents\Visual Studio 2015\Projects\EntityFramework\Gringots\bin\Debug\EntityFramework.dll
+C:\Users\Marvik-PC\Documents\Visual Studio 2015\Projects\EntityFramework\Gringots\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Marvik-PC\Documents\Visual Studio 2015\Projects\EntityFramework\Gringots\bin\Debug\EntityFramework.xml
+C:\Users\Marvik-PC\Documents\Visual Studio 2015\Projects\EntityFramework\Gringots\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Marvik-PC\Documents\Visual Studio 2015\Projects\EntityFramework\Gringots\obj\Debug\Gringots.csprojResolveAssemblyReference.cache
+C:\Users\Marvik-PC\Documents\Visual Studio 2015\Projects\EntityFramework\Gringots\obj\Debug\Gringots.exe
+C:\Users\Marvik-PC\Documents\Visual Studio 2015\Projects\EntityFramework\Gringots\obj\Debug\Gringots.pdb
